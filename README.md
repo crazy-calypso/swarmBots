@@ -40,15 +40,15 @@ Repository for the hardware and software of a swarm robotics project.
 * Collective programming, powering and charging, and control
 * Automatic sensor calibration
 
-example: EEPROM chip enables wireless prgramming of both motor board and main board
+GRITSBOT example: EEPROM chip enables wireless prgramming of both motor board and main board
 in a addition to individually  reprogramming a robot based on its unique wireless ID, it is also possible to broadcast reprogram all available robots or groups of robots
 
 ### Design
 
 * Layered design (layers can be replaced / upgraded without distrupting the functionality of the other layers)
 * Example Layers:
-  * Motorboard (lowest layer) - containes motor mcu, motors(pobably on bottom of board), battery voltage measurement, motor controller
-  * Main borad (middle layer) - contains main mcu, battery charger, voltage regulator
+  * Motorboard (lowest layer) - needs motor mcu, motors (pobably on bottom of board), motor controller
+  * Main borad (middle layer) - main mcu, battery charger, voltage regulator
   * Sensor board (top board) - contains IR distance sensors, IMU (accelerometer and gyro)
 
 ### Locomotion
@@ -72,11 +72,10 @@ https://au.element14.com/adafruit-industries/711/hobby-dc-motor-6vdc-9100rpm/dp/
 
 * RF transcever most viable option and it has far lower power consumption than wifi e.g. 16mA vs 250mA
 * Tradoff is a lower datareate of about 2 Mbit/s
-* Example frequency 2.4 GHz
 
 ### Processing
 
-* 2 mircrocontrollers running at 8Mhz
+* 2 mircrocontrollers
 * Main borad - wireless communication, sensor data processing, user defined tasks
 * Motor board - motor velocity, control of motors
 
