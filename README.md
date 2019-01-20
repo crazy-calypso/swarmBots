@@ -2,6 +2,32 @@
 
 Repository for the hardware and software of a swarm robotics project.
 
+## Curretnly Working On
+
+* Indicator LEDs - RGB? - yellow for now
+* IMU - LSM6DSM
+* Voltage regulator
+* Wifi module header
+* Reset circuit - not necessary?
+* Motor controller
+* Charger
+* Power on/off switch?
+
+## Components
+
+* MCU - ATmega328P
+* IMU - LSM6DSM
+* WiFi - ESP8266 WiFi Module Breakout Board
+
+### Notes
+
+16MHz crystal  
+C1, C2 = 2*CL – 2*Cstray  
+Example CL (load capacitance) = 20pF  
+~2-5pF for Cstray  
+C = 2*12 - 2*Cstray  
+C1&C2 = 14pF  
+
 ## Design Requirements
 
 * Inexpensive
@@ -28,12 +54,12 @@ Repository for the hardware and software of a swarm robotics project.
 
 ### Low cost
 
-* Most expensive singular componants are likely to be the motors and battery pack
+* Most expensive singular componants are likely to be the motors and battery pack, also wifi module
 * Need to find low cost options for both of these to make the project feasable
 
 ### Small form factor
 
-* Limit footprint to approx. 30x30mm
+* Limit footprint to as small a possible
 
 ### Useability
 
@@ -47,17 +73,18 @@ in a addition to individually  reprogramming a robot based on its unique wireles
 
 * Layered design (layers can be replaced / upgraded without distrupting the functionality of the other layers)
 * Example Layers:
-  * Motorboard (lowest layer) - needs motor mcu, motors (pobably on bottom of board), motor controller
+  * Motorboard (lowest layer) - motors (pobably on bottom of board), motor controller
   * Main borad (middle layer) - main mcu, battery charger, voltage regulator
   * Sensor board (top board) - contains IR distance sensors, IMU (accelerometer and gyro)
+  * Wifi Module on very top?
 
-### Locomotion
+### Movement
 
-* Most likely use micro DC motors, inexpensive examples below: 
-https://au.element14.com/multicomp/mm18/motor-miniature-1-5-4-5v-6-8krpm/dp/599116
-https://au.element14.com/multicomp/mm28/motor-miniature-3-6v-9600rpm/dp/599128
-https://au.element14.com/multicomp/mm10/motor-miniature-1-5-3-0v-16-3krpm/dp/599104
-https://au.element14.com/adafruit-industries/711/hobby-dc-motor-6vdc-9100rpm/dp/2457411
+* Most likely use micro DC motors, inexpensive examples below:
+* https://au.element14.com/multicomp/mm18/motor-miniature-1-5-4-5v-6-8krpm/dp/599116 
+* https://au.element14.com/multicomp/mm28/motor-miniature-3-6v-9600rpm/dp/599128
+* https://au.element14.com/multicomp/mm10/motor-miniature-1-5-3-0v-16-3krpm/dp/599104
+* https://au.element14.com/adafruit-industries/711/hobby-dc-motor-6vdc-9100rpm/dp/2457411
   * Note: will need motor encoder to estimate velocity
 * Alternatively consider vibration control or stepper motor
 
@@ -66,18 +93,18 @@ https://au.element14.com/adafruit-industries/711/hobby-dc-motor-6vdc-9100rpm/dp/
 * Most common distance sensing in swarm bots is IR
 * Measurements of distances and bearing to neighbouring bots and obsticals can be done with IR
 * Accellerometer and gyroscope (IMU)
+* Include axis directions on pcb
 * Battery voltage sensor - inform control of recharge behaviour
 
 ### Communication
 
-* RF transcever most viable option and it has far lower power consumption than wifi e.g. 16mA vs 250mA
+* Will most likely use wifi module - ESP8266
+* ~~RF transcever most viable option and it has far lower power consumption than wifi e.g. 16mA vs 250mA~~
 * Tradoff is a lower datareate of about 2 Mbit/s
 
 ### Processing
 
-* 2 mircrocontrollers
-* Main borad - wireless communication, sensor data processing, user defined tasks
-* Motor board - motor velocity, control of motors
+* Main borad - wireless communication, sensor data processing, user defined tasks,motor velocity, control of motors
 
 ### Power System
 
@@ -94,10 +121,6 @@ https://au.element14.com/adafruit-industries/711/hobby-dc-motor-6vdc-9100rpm/dp/
 * Charging station
   * Example: 2 copper prongs (5V and GND) that connected to a charged wall or material (aluminium)
 * The testing area can be used to aid in global positioning (with use of external camera etc.)
-
-### Known restrictions
-
-* Number of bots limited by bandwidth of RF channels
 
 ### Software
 

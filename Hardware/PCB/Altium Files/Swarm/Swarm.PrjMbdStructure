@@ -1,0 +1,7 @@
+Record=TopLevelDocument|FileName=ControlBoard.SchDoc
+Record=DiagramHierarchy|SourceDocument=SwarmBotsBoards.MbsDoc|Kind=Multi-board Schematic Module|Designator=3|Source=Swarm.PrjMbd
+Record=SubProject|SourceDocument=SwarmBotsBoards.MbsDoc|ProjectPath=Swarm.PrjMbd
+Record=DiagramHierarchy|SourceDocument=SwarmBotsBoards.MbsDoc|Kind=Multi-board Schematic Module|Designator=2|Source=Swarm.PrjMbd
+Record=SubProject|SourceDocument=SwarmBotsBoards.MbsDoc|ProjectPath=Swarm.PrjMbd
+Record=DiagramHierarchy|SourceDocument=SwarmBotsBoards.MbsDoc|Kind=Multi-board Schematic Module|Designator=1|Source=Swarm.PrjMbd
+Record=SubProject|SourceDocument=SwarmBotsBoards.MbsDoc|ProjectPath=Swarm.PrjMbd
