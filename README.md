@@ -11,6 +11,7 @@ Repository for the hardware and software of a swarm robotics project.
 * Reset circuit - not necessary?
 * Motor controller
 * Charger
+* Status LED for charge state (i.e. RGB amber for charging, green for charged, red for needs to be charged) 
 * Power on/off switch?
 
 ## Components
@@ -18,6 +19,11 @@ Repository for the hardware and software of a swarm robotics project.
 * MCU - ATmega328P
 * IMU - LSM6DSM
 * WiFi - ESP8266 WiFi Module Breakout Board
+* Battery Charger - MCP73831/2
+* Motor Controller - ?
+* Motors - ?
+* Battery - ?
+* IR Sensors -
 
 ### Notes
 
@@ -100,11 +106,11 @@ in a addition to individually  reprogramming a robot based on its unique wireles
 
 * Will most likely use wifi module - ESP8266
 * ~~RF transcever most viable option and it has far lower power consumption than wifi e.g. 16mA vs 250mA~~
-* Tradoff is a lower datareate of about 2 Mbit/s
+* Tradoff is a lower datarate of about 2 Mbit/s
 
 ### Processing
 
-* Main borad - wireless communication, sensor data processing, user defined tasks,motor velocity, control of motors
+* Main borad - wireless communication, sensor data processing, user defined tasks, motor velocity, control of motors
 
 ### Power System
 
